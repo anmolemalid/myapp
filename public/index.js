@@ -27,6 +27,8 @@
       liContainer.appendChild(profession);
       li.appendChild(liContainer);
       userlist.appendChild(li);
+
+      console.log('*****SUCCESS*****');
     });
     // Begin accessing JSON data here
   }
