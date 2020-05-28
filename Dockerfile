@@ -1,7 +1,8 @@
 FROM node:8.16.1-alpine
 WORKDIR /app
 COPY package.json /app
+COPY server.js /app
 RUN npm install
 COPY . /app
-CMD node index.js
-EXPOSE 8081
+CMD node server
+EXPOSE 8082
