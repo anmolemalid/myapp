@@ -12,6 +12,12 @@ const users = [
      "profession" : "teacher",
      "id": 1
   },
+   {
+     "name" : "mahesh",
+     "password" : "password1",
+     "profession" : "teacher",
+     "id": 10
+  },
   {
      "name" : "suresh",
      "password" : "password2",
