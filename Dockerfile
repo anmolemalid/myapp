@@ -5,4 +5,4 @@ COPY server.js /app
 RUN npm install
 COPY . /app
 CMD node server
-EXPOSE 8082
+EXPOSE 8081
