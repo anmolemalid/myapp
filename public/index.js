@@ -27,7 +27,7 @@
       li.appendChild(liContainer);
       userlist.appendChild(li);
 
-      console.log('*****SUCCESS*****');
+      console.log('*****SUCCESS*****',"update");
     });
     // Begin accessing JSON data here
   }
