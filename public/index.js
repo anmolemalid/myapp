@@ -11,7 +11,6 @@
     const userlist =  document.querySelector('.userlist');
     let data = this.response;
     data = JSON.parse(data);
-    console.log(data, 'dsdsdsfs');
 
     data.forEach(user => {
       const li = document.createElement('li');
