@@ -1,0 +1,7 @@
+version: '1'
+services:
+  cwf-services:
+    image: my-app-image:latest
+    ports:
+      - "8081:8081"
+    
