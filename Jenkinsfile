@@ -10,7 +10,6 @@ node {
     // }
 
     stage('Build Docker Image') {
-        sh 'sudo chmod 666 /var/run/docker.sock'
         sh "docker build -t myapp_img ."
         sh "docker tag myapp_img gcr.io/firstcloudapp-278217/myapp_img:latest"
     }
