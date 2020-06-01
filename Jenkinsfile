@@ -9,7 +9,7 @@ node {
     //     customImage.push()
     // }
 
-    docker.withRegistry('https://gcr.io', 'myregistry') {
+    docker.withRegistry('https://gcr.io', 'gcr:google-container-registry') {
 
         stage('Build Docker Image') {
             sh "docker build -t myapp_img4 ."
