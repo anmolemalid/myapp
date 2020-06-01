@@ -13,7 +13,7 @@ node {
         app = docker.build("firstcloudapp-278217/myapp_img")
     }
     stage('Push image') {
-        docker.withRegistry('https://gcr.io', 'gcr:[firstcloudapp-278217]') {
+        docker.withRegistry('https://gcr.io', 'gcr:firstcloudapp-278217') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
