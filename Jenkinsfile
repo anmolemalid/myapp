@@ -9,12 +9,14 @@ node {
     //     customImage.push()
     // }
 
-    stage('Build Docker Image') {
-        sh "docker build -t myapp_img ."
-        sh "docker tag myapp_img gcr.io/myregistry/myapp_img:latest"
-    }
+    docker.withRegistry('https://gcr.io', 'myregistry') {
+        stage('Build Docker Image') {
+            sh "docker build -t myapp_img ."
+            sh "docker tag myapp_img gcr.io/myregistry/myapp_img:latest"
+        }
 
-    stage('Push Image') {
-        sh("gcloud docker -- push gcr.io/myregistry/myapp_img:latest")
+        stage('Push Image') {
+            sh("gcloud docker -- push gcr.io/myregistry/myapp_img:latest")
+        }
     }
 }
