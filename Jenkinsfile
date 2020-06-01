@@ -11,6 +11,7 @@ node {
 
     stage('Build Docker Image') {
         sh "docker build -t myapp_img ."
+        sh "gcloud auth application-default login --quiet"
         sh "docker tag myapp_img gcr.io/firstcloudapp-278217/myapp_img:latest"
     }
 
