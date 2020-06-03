@@ -23,4 +23,8 @@ node {
     stage('Push Image') {
         sh("gcloud docker -- push gcr.io/firstcloudapp-278217/myapp-pipeline-img:build-$JOB_BASE_NAME-$BUILD_NUMBER")
     }
+
+    stage('run docker on VM') {
+        sh "docker run -d -p 8081:8081 --name my-container myapp-pipeline-img"
+    }
 }
