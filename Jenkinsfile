@@ -25,6 +25,6 @@ node {
     }
 
     stage('run docker on VM') {
-        sh "docker run -d -p 8081:8081 --name my-container myapp-pipeline-img"
+        sh "docker run -d -p 8081:8081 --name my-container myapp-pipeline-img:build-$JOB_BASE_NAME-$BUILD_NUMBER"
     }
 }
