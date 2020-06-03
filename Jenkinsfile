@@ -24,9 +24,17 @@ node {
         sh("gcloud docker -- push gcr.io/firstcloudapp-278217/myapp-pipeline-img:build-$JOB_BASE_NAME-$BUILD_NUMBER")
     }
 
+    stage('Stop and remove docker container') {
+        try{
+            sh "docker stop my-container"
+            sh "docker rm my-container"
+        }catch(){
+            sh "echo 'Container not exist'"
+        }
+        
+    }
+
     stage('run docker on VM') {
-        sh "docker stop my-container"
-        sh "docker rm my-container"
         sh "docker run -d -p 8081:8081 --name my-container myapp-pipeline-img:build-$JOB_BASE_NAME-$BUILD_NUMBER"
     }
 }
