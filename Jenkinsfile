@@ -28,7 +28,7 @@ node {
         try{
             sh "docker stop my-container"
             sh "docker rm my-container"
-        }catch(){
+        }catch(Exception error){
             sh "echo 'Container not exist'"
         }
     }
