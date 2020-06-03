@@ -23,8 +23,4 @@ node {
     stage('Push Image') {
         sh("gcloud docker -- push gcr.io/firstcloudapp-278217/myapp-pipeline-img:build-$JOB_BASE_NAME-$BUILD_NUMBER")
     }
-
-    stage('print success') {
-        sh "Docker build and GCR push success"
-    }
 }
