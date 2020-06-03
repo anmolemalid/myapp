@@ -31,7 +31,6 @@ node {
         }catch(){
             sh "echo 'Container not exist'"
         }
-        
     }
 
     stage('run docker on VM') {
